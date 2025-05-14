@@ -31,7 +31,7 @@ void main() async {
     // Respond to .v command
     if (content == '.v') {
       await event.message.channel.sendMessage(MessageBuilder(
-        content: '### Thank you for your purchase! Please vouch in <#1344398025392656427>, and if you want to attach an image, blur the username that delivered the goods.',
+        content: '### Thank you for your purchase! Please vouch in <#1372301645735788604> , and if you want to attach an image, blur the username that delivered the goods.',
       ));
     }
   });
