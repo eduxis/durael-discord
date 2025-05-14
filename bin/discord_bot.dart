@@ -42,7 +42,7 @@ void main() async {
       final textChannel = event.channel as TextChannel;
       try {
         await textChannel.sendMessage(MessageBuilder(content:
-          "### Hello! Please describe your request and wait for a response. We are currently offline, as it is nighttime in our country. Our time zone is GMT+2 (Europe). Please be patient."
+          "## Hello! Please describe your request and wait for a response. We are currently offline, as it is nighttime in our country. Our time zone is GMT+2 (Europe). Please be patient. Keep your ticket open, just wait until we're back."
         ));
         print("👋 Sent Hi in a new text channel with ID: ${textChannel.id}");
       } catch (e) {
