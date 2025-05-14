@@ -1,27 +1,41 @@
 import 'dart:io';
 import 'package:nyxx/nyxx.dart';
 
-void main() async{
+void main() async {
   String token = Platform.environment['TOKEN'] ?? '';
 
   final client = await Nyxx.connectGateway(
-    token, 
-    GatewayIntents.allUnprivileged
-    );
+    token,
+    GatewayIntents.allUnprivileged | GatewayIntents.guilds,
+  );
 
-    final bot = await client.users.fetchCurrentUser();
-    print("✅ Bot is online");
+  final bot = await client.users.fetchCurrentUser();
+  print("✅ Bot is online");
 
-    client.onMessageCreate.listen((event) async{
-      if(event.mentions.contains(bot)) {
-        await event.message.channel.sendMessage(MessageBuilder(
-          content: 'aaok ${event.message.author.username}, How may I help you today',
-          replyId: event.message.id,
-        ));
+  // Respond when bot is mentioned
+  client.onMessageCreate.listen((event) async {
+    if (event.mentions.contains(bot)) {
+      await event.message.channel.sendMessage(MessageBuilder(
+        content: 'aaok ${event.message.author.username}, How may I help you today',
+        replyId: event.message.id,
+      ));
+    }
+  });
+
+  // Respond with "Hi" when a new channel is created
+  client.onChannelCreate.listen((event) async {
+    if (event.channel is TextChannel) {
+      final textChannel = event.channel as TextChannel;
+      try {
+        await textChannel.sendMessage(MessageBuilder(content: "Hi"));
+        print("👋 Sent Hi in new channel: ${textChannel.name}");
+      } catch (e) {
+        print("❌ Failed to send message in ${textChannel.name}: $e");
       }
-    });
+    }
+  });
 
-   // Fake Web Server to Keep Render Alive
+  // Fake Web Server to Keep Render Alive
   var port = int.tryParse(Platform.environment['PORT'] ?? '8080') ?? 8080;
   var server = await HttpServer.bind(InternetAddress.anyIPv4, port);
   print("🌍 Fake server running on port $port");
