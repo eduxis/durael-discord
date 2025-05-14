@@ -28,7 +28,7 @@ client.onChannelCreate.listen((event) async {
     final textChannel = event.channel as TextChannel;
     try {
       await textChannel.sendMessage(MessageBuilder(content: 
-        "### Welcome to DonutShop. Please say what you want and wait for a response and make sure to ping us. The current average response time is 1–10 minutes."
+        "Please say what you want and wait for a response and make sure to ping us. The current average response time is 1–10 minutes."
       ));
       print("👋 Sent Hi in a new text channel with ID: ${textChannel.id}");
     } catch (e) {
