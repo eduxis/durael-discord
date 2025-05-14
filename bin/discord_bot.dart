@@ -28,9 +28,9 @@ void main() async {
       final textChannel = event.channel as TextChannel;
       try {
         await textChannel.sendMessage(MessageBuilder(content: "Hi"));
-        print("👋 Sent Hi in new channel: ${textChannel.name}");
+        print("👋 Sent Hi in a new text channel with ID: ${textChannel.id}");
       } catch (e) {
-        print("❌ Failed to send message in ${textChannel.name}: $e");
+        print("❌ Failed to send message in new channel with ID: ${textChannel.id} - $e");
       }
     }
   });
