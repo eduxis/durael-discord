@@ -39,7 +39,7 @@ void main() async {
       final textChannel = event.channel as TextChannel;
       try {
         await textChannel.sendMessage(MessageBuilder(content:
-          "Please say what you want and wait for a response and make sure to ping us. The current average response time is 1–10 minutes."
+          "### Hello! Please describe your request and wait for a response. Make sure to ping us too. The current average response time is 1–10 minutes."
         ));
         print("👋 Sent Hi in a new text channel with ID: ${textChannel.id}");
       } catch (e) {
