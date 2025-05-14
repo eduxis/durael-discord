@@ -27,7 +27,7 @@ void main() async {
     if (event.channel is TextChannel) {
       final textChannel = event.channel as TextChannel;
       try {
-        await textChannel.sendMessage(MessageBuilder(content: "Hi"));
+        await textChannel.sendMessage(MessageBuilder(content: "## Welcome to DonutShop. Please say what you want and wait for a response. The current average response time is 1–10 minutes. 
         print("👋 Sent Hi in a new text channel with ID: ${textChannel.id}");
       } catch (e) {
         print("❌ Failed to send message in new channel with ID: ${textChannel.id} - $e");
