@@ -6,7 +6,7 @@ void main() async {
 
   final client = await Nyxx.connectGateway(
     token,
-    GatewayIntents.allUnprivileged | GatewayIntents.guilds,
+    GatewayIntents.all | GatewayIntents.messageContent,
   );
 
   final bot = await client.users.fetchCurrentUser();
