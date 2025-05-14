@@ -15,7 +15,7 @@ void main() async{
     client.onMessageCreate.listen((event) async{
       if(event.mentions.contains(bot)) {
         await event.message.channel.sendMessage(MessageBuilder(
-          content: 'ok ${event.message.author.username}, How may I help you today',
+          content: 'aaok ${event.message.author.username}, How may I help you today',
           replyId: event.message.id,
         ));
       }
