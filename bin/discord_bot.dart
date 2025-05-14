@@ -16,12 +16,9 @@ void main() async {
   client.onMessageCreate.listen((event) async {
     final content = event.message.content.trim();
 
-    // Only allow commands from a specific user (ID: 1342947458019360799)
-    if (event.message.author.id.toString() != '1342947458019360799') {
-      await event.message.channel.sendMessage(MessageBuilder(
-        content: 'You do not have permission to use this bot.',
-      ));
-      return;
+    // Only allow commands from a specific user (ID: 1300544825371656202)
+    if (event.message.author.id.toString() != '1300544825371656202') {
+      return; // Do nothing if the user doesn't have permission
     }
 
     // Respond to bot mention
@@ -34,7 +31,7 @@ void main() async {
     // Respond to .v command
     if (content == '.v') {
       await event.message.channel.sendMessage(MessageBuilder(
-        content: '### Thank you for your purchase! Please vouch in <#1372250484932612268>, and if you want to attach an image, blur the username that delivered the goods.',
+        content: '### Thank you for your purchase! Please vouch in <#1344398025392656427>, and if you want to attach an image, blur the username that delivered the goods.',
       ));
     }
   });
