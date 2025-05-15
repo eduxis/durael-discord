@@ -18,14 +18,13 @@ void main() async {
 
     // Only allow commands from a specific user (ID: 1300544825371656202)
     if (event.message.author.id.toString() != '1300544825371656202') {
-      return; // Do nothing if the user doesn't have permission
+      return;
     }
 
     // Respond to bot mention
     if (event.mentions.contains(bot)) {
-      await event.message.channel.sendMessage(MessageBuilder(
-        content: '.',
-      ));
+      await event.message.channel.sendMessage(MessageBuilder(content: '.'));
+      await event.message.delete();
     }
 
     // Respond to .v command
@@ -33,6 +32,7 @@ void main() async {
       await event.message.channel.sendMessage(MessageBuilder(
         content: '### Thank you for your purchase! Please vouch in <#1371532842961604709>, and if you want to attach an image, blur the username that delivered the goods.',
       ));
+      await event.message.delete();
     }
 
     // Respond to .pp command
@@ -40,6 +40,7 @@ void main() async {
       await event.message.channel.sendMessage(MessageBuilder(
         content: '## Please send your amount in EURO to http://paypal.me/lorinormen as Friends & Family. You must cover any fees.',
       ));
+      await event.message.delete();
     }
   });
 
