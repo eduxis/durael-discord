@@ -31,7 +31,7 @@ void main() async {
     // Respond to .v command
     if (content == '.v') {
       await event.message.channel.sendMessage(MessageBuilder(
-        content: '### Thank you for your purchase! Please vouch in <#1372301645735788604> , and if you want to attach an image, blur the username that delivered the goods.',
+        content: '### Thank you for your purchase! Please vouch in <#1371532842961604709> , and if you want to attach an image, blur the username that delivered the goods.',
       ));
     }
   });
@@ -42,7 +42,7 @@ void main() async {
       final textChannel = event.channel as TextChannel;
       try {
         await textChannel.sendMessage(MessageBuilder(content:
-          "## Hello! Please describe your request and wait for a response. We are currently offline, as it is nighttime in our country. Our time zone is GMT+2 (Europe). Please be patient. Keep your ticket open, just wait until we're back."
+          "## Hello! Please describe your request and wait for a response. Make sure to ping us too. The current average response time is 1–10 minutes."
         ));
         print("👋 Sent Hi in a new text channel with ID: ${textChannel.id}");
       } catch (e) {
