@@ -36,6 +36,15 @@ void main() async {
     }
   });
 
+    // Respond to .v command
+    if (content == '.pp') {
+      await event.message.channel.sendMessage(MessageBuilder(
+        content: '## Please send your amount in EURO to http://paypal.me/lorinormen as Friends & Family. You must cover any fees. ',
+      ));
+    }
+  });
+
+
   // Auto message when a new text channel is created
   client.onChannelCreate.listen((event) async {
     if (event.channel is TextChannel) {
