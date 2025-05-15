@@ -31,19 +31,17 @@ void main() async {
     // Respond to .v command
     if (content == '.v') {
       await event.message.channel.sendMessage(MessageBuilder(
-        content: '### Thank you for your purchase! Please vouch in <#1371532842961604709> , and if you want to attach an image, blur the username that delivered the goods.',
+        content: '### Thank you for your purchase! Please vouch in <#1371532842961604709>, and if you want to attach an image, blur the username that delivered the goods.',
       ));
     }
-  });
 
-    // Respond to .v command
+    // Respond to .pp command
     if (content == '.pp') {
       await event.message.channel.sendMessage(MessageBuilder(
-        content: '## Please send your amount in EURO to http://paypal.me/lorinormen as Friends & Family. You must cover any fees. ',
+        content: '## Please send your amount in EURO to http://paypal.me/lorinormen as Friends & Family. You must cover any fees.',
       ));
     }
   });
-
 
   // Auto message when a new text channel is created
   client.onChannelCreate.listen((event) async {
